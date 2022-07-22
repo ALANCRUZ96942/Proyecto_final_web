@@ -22,7 +22,7 @@ var dummyCourses = [
     name: "Javascript",
     description: "lorem",
     image: "",
-    lessons: {
+    lessons: [{
       lesson1: {
         title: "primera clase",
         video: "htttp://linkyoutube"
@@ -39,9 +39,7 @@ var dummyCourses = [
         title: "primera clase",
         video: "htttp://linkyoutube"
       }
-
-
-    }
+  }]
   },
   { 
     id: 2,

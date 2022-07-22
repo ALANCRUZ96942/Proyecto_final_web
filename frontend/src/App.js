@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Courses from "./components/Courses";
 import Login from './components/Login';
+import Admin from './components/Admin';
+import AdminCreate from './components/AdminViews/AdminCreate';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         <Route path="/" element={<Home />}   />
         <Route path="/cursos" element={<Courses />}   />
         <Route path="/login" element={<Login />}   />
+        <Route path="/admin" element={<Admin />}   />
+        <Route path="admin/cursos/agregar" element={<AdminCreate />}   />
+
       </Routes>
     <Footer />
     </BrowserRouter>

@@ -17,6 +17,8 @@ function NavBar() {
             <Nav.Link href="/cursos">Cursos</Nav.Link>
             <Nav.Link  className="justify-content-end" href={"/"+login}>{login}</Nav.Link>
 
+            <Nav.Link  className="justify-content-end" href="/admin">Admin Dashboard</Nav.Link>
+
 
 
           </Nav>
