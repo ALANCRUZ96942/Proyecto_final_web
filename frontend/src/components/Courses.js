@@ -43,7 +43,7 @@ function App() {
     <div class="row">
       {data.map((userInfo,index) => (
       <a href={` ${userInfo.slug}`} class="nothing col-log-6 col-md-3 col-12">
-        <div class="card m-3 courses" key={index}>
+        <div class="card shadow-lg m-3 courses" key={index}>
         <DummyImage className="imageCard" bgColor='#0a1929' fgColor='aqua' />
 
           <div class="card-body">
