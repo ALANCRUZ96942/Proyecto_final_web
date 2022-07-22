@@ -3,7 +3,6 @@ import  Carrousel from '../components/Parts/Carrousel';
 function Home(){
 
     return(
-
         <Carrousel />
         );
 }
