@@ -41,3 +41,17 @@
 .navbar{
   background-color: #E6BCC4;
 }
+
+.imageCard{
+  width: 100%;
+}
+
+.nothing{
+  text-decoration: none;
+  color: black;
+}
+
+.nothin:hover{
+color: #282c34;
+}
+

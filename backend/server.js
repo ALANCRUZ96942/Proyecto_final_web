@@ -20,21 +20,76 @@ var dummyCourses = [
     id: 1,
     slug: "js",
     name: "Javascript",
-    description: "lorem"
+    description: "lorem",
+    image: ""
   },
   { 
     id: 2,
     slug: "java",
     name: "Java",
-    description: "lorem"
+    description: "lorem",
+    image: ""
   },
   {
     
     id: 3,
     slug: "c",
     name: "C y C++",
-    description: "lorem"
-  }
+    description: "lorem",
+    image: ""
+  },
+  {
+    id: 4,
+    slug: "js2",
+    name: "Javascript2",
+    description: "lorem",
+    image: ""
+  },
+  { 
+    id: 5,
+    slug: "java2",
+    name: "Java2",
+    description: "lorem",
+    image: ""
+  },
+  {
+    
+    id: 6,
+    slug: "c2",
+    name: "C y C++2",
+    description: "lorem",
+    image: ""
+  },
+  {
+    id: 7,
+    slug: "js2",
+    name: "Javascript2",
+    description: "lorem",
+    image: ""
+  },
+  { 
+    id: 8,
+    slug: "java2",
+    name: "Java2",
+    description: "lorem",
+    image: ""
+  },
+  {
+    
+    id: 9,
+    slug: "c3",
+    name: "C y C++3",
+    description: "lorem",
+    image: ""
+  },
+    {
+    id: 10,
+    slug: "js3",
+    name: "Javascript",
+    description: "lorem",
+    image: ""
+  },
+
 ];
 
 
