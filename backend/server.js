@@ -21,7 +21,27 @@ var dummyCourses = [
     slug: "js",
     name: "Javascript",
     description: "lorem",
-    image: ""
+    image: "",
+    lessons: {
+      lesson1: {
+        title: "primera clase",
+        video: "htttp://linkyoutube"
+      },
+      lesson2: {
+        title: "primera clase",
+        video: "htttp://linkyoutube"
+      },
+      lesson3: {
+        title: "primera clase",
+        video: "htttp://linkyoutube"
+      },
+      lesson4: {
+        title: "primera clase",
+        video: "htttp://linkyoutube"
+      }
+
+
+    }
   },
   { 
     id: 2,
