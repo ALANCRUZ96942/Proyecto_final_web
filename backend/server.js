@@ -44,6 +44,7 @@ var dummyCourses = [
     name: "Javascript2",
     description: "lorem",
     image: ""
+    
   },
   { 
     id: 5,
