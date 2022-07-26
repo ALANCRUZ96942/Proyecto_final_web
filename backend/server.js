@@ -3,6 +3,9 @@
 var express = require("express");
 var cors = require("cors")
 const mongoose = require("mongoose");
+const multer = require("multer");
+var path = require('path');
+
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -11,7 +14,11 @@ var PORT = process.env.PORT || 4000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors())
+app.use(cors());
+app.use(multer({
+  dest: path.join(__dirname,'src/img')
+}).single('image'));
+
 
 /*Integracion mogoose*/
 
@@ -162,9 +169,11 @@ app.get("/api/courses/:course", function(req, res) {
 
 // Create New Course
 app.post("/api/courses/create", async function(req, res) {
-  let newcourse = new Course(req.body);
-  await newcourse.save();
-  res.json(newcourse);
+  console.log(req.body);
+
+  //let newcourse = new Course(req.body);
+  //await newcourse.save();
+  //res.json(newcourse);
 });
 
 //delete

@@ -12,7 +12,7 @@ function AdminCreate() {
   const [nombre, setNombre] = useState([]);
   const [desc, setDesc] = useState([]);
   const [slug, setSlug] = useState([]);
-  const [img, setImg] = useState([]);
+  const [file, setFile] = useState([]);
 
   const [lecciones, setLessons] = useState([]);
 
@@ -31,12 +31,16 @@ function AdminCreate() {
   };
   function  getSlug(val){
     setSlug(val.target.value);
-
+    console.log(slug);
 
   };
-  function  getImg(val){
-    setImg(val.target.value);
+
+  function  getFile(val){
+    const files = val.target.files[0];
+    setFile(files);
+    console.log(file);
   };
+
   
   function getLessons(e){
     e.preventDefault();
@@ -45,7 +49,7 @@ function AdminCreate() {
       const newlesson = {
         titulo: titulol,
         content: contentl,
-        content : videol,
+        video : videol,
       }
       setLessons(lecciones => [...lecciones, newlesson]);
       console.log(lecciones);
@@ -83,7 +87,7 @@ function AdminCreate() {
     slug: slug,
     name:  nombre,
     description: desc,
-    image : null,
+    image : file,
     lessons: lecciones,
   }
 
@@ -143,7 +147,11 @@ function AdminCreate() {
             </div>
             <div className="form-group m-3">
                 <label >Imagen</label>
-                <input type="file" className="form-control" onChange={getImg}/>
+                <input
+                  type="file"
+                  id="file"
+                  onChange={getFile}
+                />            
             </div>
 
             <h2>Insertar nuevas lecciones</h2>

@@ -6,7 +6,7 @@ const courseSchema = new Schema({
   slug: String,
   name:  String,
   description: String,
-  image : String,
+  image : Map,
   lessons: [{ title: String, content: String, video: String }]
 
 });
