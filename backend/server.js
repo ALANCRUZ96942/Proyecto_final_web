@@ -37,103 +37,6 @@ const uri = `mongodb+srv://master:${password}@cluster0.jxrv7.mongodb.net/${dbNam
 .catch(e => console.log('error de conexión', e));
 
 const Course = require("./models/Course");
-/*
-var dummyCourses = [
-  {
-    "id": 1,
-    "slug": "js",
-    "name": "Javascript",
-    "description": "lorem",
-    "image": "",
-    "lessons": [{
-      "lesson1": {
-        "title": "primera clase",
-        "video": "htttp://linkyoutube"
-      },
-      "lesson2": {
-        "title": "primera clase",
-        "video": "htttp://linkyoutube"
-      },
-      "lesson3": {
-        "title": "primera clase",
-        "video": "htttp://linkyoutube"
-      },
-      "lesson4": {
-        "title": "primera clase",
-        "video": "htttp://linkyoutube"
-      }
-  }]
-  },
-  { 
-    "id": 2,
-    "slug": "java",
-    "name": "Java",
-    "description": "lorem",
-    "image": ""
-  },
-  {
-    
-    "id": 3,
-    "slug": "c",
-    "name": "C y C++",
-    "description": "lorem",
-    "image": ""
-  },
-  {
-    "id": 4,
-    "slug": "js2",
-    "name": "Javascript2",
-    "description": "lorem",
-    "image": ""
-    
-  },
-  { 
-    "id": 5,
-    "slug": "java2",
-    "name": "Java2",
-    "description": "lorem",
-    "image": ""
-  },
-  {
-    
-    "id": 6,
-    "slug": "c2",
-    "name": "C y C++2",
-    "description": "lorem",
-    "image": ""
-  },
-  {
-    "id": 7,
-    "slug": "js2",
-    "name": "Javascript2",
-    "description": "lorem",
-    "image": ""
-  },
-  { 
-    "id": 8,
-    "slug": "java2",
-    "name": "Java2",
-    "description": "lorem",
-    "image": ""
-  },
-  {
-    
-    "id": 9,
-    "slug": "c3",
-    "name": "C y C++3",
-    "description": "lorem",
-    "image": ""
-  },
-    {
-    "id": 10,
-    "slug": "js3",
-    "name": "Javascript",
-    "description": "lorem",
-    "image": ""
-  },
-
-];
-*/
 
 
 app.get("/api/courses", async function(req, res) {
@@ -151,34 +54,18 @@ app.get("/api/courses", async function(req, res) {
 app.get("/",(req,res) =>{
   res.send("Bienvenido");
 });
-/*
-app.get("/api/courses/:course", function(req, res) {
-  var chosen = req.params.course;
-
-  console.log(chosen);
-
-  for (var i = 0; i < dummyCourses.length; i++) {
-    if (chosen === dummyCourses[i].slug) {
-      return res.json(dummyCourses[i]);
-    }
-  }
-
-  return res.json(false);
-});*/
 
 
 // Create New Course
 app.post("/api/courses/create", async function(req, res) {
-  console.log(req.body);
-
-  //let newcourse = new Course(req.body);
-  //await newcourse.save();
-  //res.json(newcourse);
+  //console.log(req.body);
+ let newcourse = new Course(req.body);
+  await newcourse.save();
+  res.json(newcourse);
 });
 
 //delete
 app.post("/api/courses/delete/:id", async (req, res) => {
-
   let curso = await Course.findById(req.params.id)
   if (curso){
     await curso.delete()
@@ -187,8 +74,6 @@ app.post("/api/courses/delete/:id", async (req, res) => {
   else {
     res.json({ msg: "Course not delete task" })
   }
-
-
 });
 
 // Starts the server to begin listening
