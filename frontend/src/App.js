@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,22 +11,35 @@ import Login from './components/Login';
 import Admin from './components/Admin';
 import AdminCreate from './components/AdminViews/AdminCreate';
 import AdminEdit from './components/AdminViews/AdminEdit'
+import Register from "./components/Register";
+import AuthContext from "./store/auth-context";
+import RequireAuth from "./components/RequireAuth";
 
 function App() {
+  const authCtx = useContext(AuthContext);
   return (
-    
-    <BrowserRouter>
-    <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />}   />
-        <Route path="/cursos" element={<Courses />}   />
-        <Route path="/login" element={<Login />}   />
-        <Route path="/admin" element={<Admin />}   />
-        <Route path="admin/cursos/agregar" element={<AdminCreate />}   />
-        <Route path="admin/cursos/editar/:id" element={<AdminEdit />}   />
 
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+
+
+        {/* protected routes routes  */}
+        <Route element={<RequireAuth />}>
+          <Route path="/" exact element={<Home />}></Route>
+          
+          <Route path="/admin" element={<Admin />} />
+          <Route path="admin/cursos/agregar" element={<AdminCreate />} />
+          <Route path="admin/cursos/editar/:id" element={<AdminEdit />} />
+
+        </Route>
+
+        {/* public routes  */}
+        <Route path="/cursos" element={<Courses />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/Register" element={<Register />}></Route>
       </Routes>
-    <Footer />
+      <Footer />
     </BrowserRouter>
   );
 }

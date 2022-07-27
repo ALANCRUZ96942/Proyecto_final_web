@@ -5,6 +5,11 @@ var cors = require("cors")
 const mongoose = require("mongoose");
 const multer = require("multer");
 var path = require('path');
+const dotenv = require("dotenv")
+const indexRoutes = require("./routes/routeindex")
+
+dotenv.config()
+
 
 // Sets up the Express App
 // =============================================================
@@ -75,6 +80,10 @@ app.post("/api/courses/delete/:id", async (req, res) => {
     res.json({ msg: "Course not delete task" })
   }
 });
+
+//Login
+app.use('/',indexRoutes)
+
 
 // Starts the server to begin listening
 // =============================================================
