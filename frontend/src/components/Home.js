@@ -22,27 +22,24 @@ function Home() {
                     <div class="card shadow-lg p-5  m-3">
                         <h1>Misión </h1>
                         <h2>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea necessitatibus quaerat consequuntur ullam commodi aliquid. Accusamus, porro? Accusamus consequatur veniam, non repellendus veritatis voluptatibus hic, enim voluptatem laborum cumque quas.
-                        </h2>
+                        Promover la educación, dando las herramientas necesarias para obtener y compartir conocimiento en diferentes áreas.                        </h2>
                     </div>
 
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="card shadow-lg p-5 m-3">
-                        <h1>Misión </h1>
+                        <h1>Visión </h1>
 
                         <h2>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea necessitatibus quaerat consequuntur ullam commodi aliquid. Accusamus, porro? Accusamus consequatur veniam, non repellendus veritatis voluptatibus hic, enim voluptatem laborum cumque quas.
-                        </h2>
+                        Comprometidos con dar la mejor calidad a nuestros usuarios, respondemos todo contacto con nosotros vía telefónica o por correo electrónico.                        </h2>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
                     <div class="card shadow-lg p-5  m-3">
-                        <h1>Misión </h1>
+                        <h1>Valores </h1>
 
                         <h2>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea necessitatibus quaerat consequuntur ullam commodi aliquid. Accusamus, porro? Accusamus consequatur veniam, non repellendus veritatis voluptatibus hic, enim voluptatem laborum cumque quas.
-                        </h2>
+Honestidad, Responsabilidad                        </h2>
                     </div>
                 </div>
             </div>
