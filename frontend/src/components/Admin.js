@@ -70,7 +70,7 @@ function Admin() {
             <td>{` ${userInfo.name}`}</td>
             <td>{` ${userInfo.description}`}</td>
             <td>
-            <a href={"admin/cursos/editar/"+userInfo._id}><button type="button" class="btn btn-warning m-3">Editar</button></a>                  
+            <a href={`admin/cursos/editar/${userInfo._id}`}><button type="button" class="btn btn-warning m-3">Editar</button></a>                  
             <button type="button" class="btn btn-danger m-3" onClick={() => {delet(userInfo._id)}}>Eliminar</button>    
             </td>
 

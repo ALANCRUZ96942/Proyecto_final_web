@@ -69,6 +69,24 @@ app.post("/api/courses/create", async function(req, res) {
   res.json(newcourse);
 });
 
+
+//update
+
+app.patch("/api/courses/edit/:id", async (req, res) => {
+  try {
+    let curso = await Course.findById(req.params.id)
+    Object.assign(curso,req.body);
+    await curso.save();
+    console.log(curso);
+    return res.json(curso);
+
+  } catch (error) {
+    console.log(error);
+  }
+
+});
+
+
 //delete
 app.post("/api/courses/delete/:id", async (req, res) => {
   let curso = await Course.findById(req.params.id)
@@ -80,6 +98,25 @@ app.post("/api/courses/delete/:id", async (req, res) => {
     res.json({ msg: "Course not delete task" })
   }
 });
+
+
+
+//get lessons
+
+
+app.get("/api/courses/:id", async function(req, res) {
+  try {
+    let curso = await Course.findById(req.params.id)
+    console.log(curso);
+    return res.json(curso);
+
+  } catch (error) {
+    console.log(error);
+  }
+
+});
+
+
 
 //Login
 app.use('/',indexRoutes)

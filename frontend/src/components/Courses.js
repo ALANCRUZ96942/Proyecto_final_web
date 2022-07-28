@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { DummyImage } from 'react-simple-placeholder-image'
@@ -42,7 +42,8 @@ function App() {
 
       <div class="row">
         {data.map((userInfo, index) => (
-          <a href={` ${userInfo.slug}`} class="nothing col-log-6 col-md-3 col-12">
+          
+          <a href={`/cursos/${userInfo._id}`} class="nothing col-log-6 col-md-3 col-12">
             <div class="card shadow-lg m-3 courses" key={index}>
               <DummyImage className="imageCard" bgColor='#0a1929' fgColor='aqua' />
 

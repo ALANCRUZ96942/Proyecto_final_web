@@ -14,7 +14,7 @@ import AdminEdit from './components/AdminViews/AdminEdit'
 import Register from "./components/Register";
 import AuthContext from "./store/auth-context";
 import RequireAuth from "./components/RequireAuth";
-
+import CourseView from './components/CourseView';
 function App() {
   const authCtx = useContext(AuthContext);
   return (
@@ -25,19 +25,18 @@ function App() {
 
 
         {/* protected routes routes  */}
-        <Route element={<RequireAuth />}>
           <Route path="/" exact element={<Home />}></Route>
           
           <Route path="/admin" element={<Admin />} />
           <Route path="admin/cursos/agregar" element={<AdminCreate />} />
           <Route path="admin/cursos/editar/:id" element={<AdminEdit />} />
 
-        </Route>
 
         {/* public routes  */}
         <Route path="/cursos" element={<Courses />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Register" element={<Register />}></Route>
+        <Route path="/cursos/:slug" element={<CourseView />} />
       </Routes>
       <Footer />
     </BrowserRouter>
