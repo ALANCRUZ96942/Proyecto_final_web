@@ -34,6 +34,7 @@ export const AuthContextProvider = (props) => {
   const tokenData = retrieveStoredToken();
 
   const loginHandler = (token, expiresIn) => {
+
     console.log(`entrando a login Handler datos Token: ${token}   ExpiresIn: ${expiresIn}`);
     setToken(token);
     localStorage.setItem("token", token);
